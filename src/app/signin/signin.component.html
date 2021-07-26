@@ -1,0 +1,40 @@
+<p>
+    <mat-button-toggle-group name="type" aria-label="Font Style">
+      <mat-button-toggle value="bold" (click)="fxn1()">Signin</mat-button-toggle>
+      <mat-button-toggle value="italic" (click)="fxn2()">Signup</mat-button-toggle>
+    </mat-button-toggle-group>
+  </p>
+<div class="text-center" *ngIf="isone">
+    <form class="forms-signin" #loginForm="ngForm" (submit)="onLogin(loginForm)" >
+        <div class="form-floating">
+          <input type="email" class="form-control" id="floatingInputLogin" placeholder="name@example.com" [(ngModel)]="email" name="email">
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPasswordLogin" placeholder="Password" [(ngModel)]="password" name="password">
+          <label for="floatingPassword">Password</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary"  type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020–2021</p>
+      </form>
+</div>
+
+
+<div class="text-center" *ngIf="istwo" >
+    <form class="forms-signin" #registerForm="ngForm" (submit)="onRegister(registerForm)" >
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInputRegister" name="name" [(ngModel)]="name" placeholder="your name">
+          <label for="floatingInput">Name</label>
+        </div>
+        <div class="form-floating">
+          <input type="email" class="form-control" name="email" [(ngModel)]="email" id="floatingInputRegister" placeholder="name@example.com">
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" name="password" [(ngModel)]="password" id="floatingPasswordRegister" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" [ngClass]="{'btn-success':registerText!='Register'}" id="regbtn" type="submit">{{registerText}}</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020–2021</p>
+      </form>
+</div>

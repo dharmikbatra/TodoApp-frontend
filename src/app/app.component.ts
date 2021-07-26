@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  isDark = false;
+  onToggleMode(){
+    this.isDark = !this.isDark;
+  }
 }

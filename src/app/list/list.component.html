@@ -1,0 +1,17 @@
+<div style="text-align: center;">
+  <button type="button" class="btn btn-success" (click)="toggleAddForm()">Add ToDo</button>  
+ </div>
+ <div class="input-group mb-3" *ngIf="addForm" >
+  <input type="text" class="form-control" [(ngModel)]="newTodo" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="onAddTodo()">Change</button>
+</div>
+ 
+ <div *ngFor="let todo of todos">
+    <app-list-item [item]="todo" (deleteItem)="onDelete($event)" ></app-list-item>
+    <br>
+    <mat-divider></mat-divider>
+    <br>
+  </div>
+  
+ 
+  
